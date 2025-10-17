@@ -839,12 +839,8 @@ The control system architecture supports extension to physical hardware:
 
 **Possible Hardware Integrations:**
 - **Servo motors** for launch angle adjustment
-- **Pneumatic/hydraulic actuators** for velocity control
-- **DC motors** for spin mechanism
 - **High-speed cameras** for real-time trajectory tracking
 - **IMU sensors** for angle measurement
-- **Radar/LIDAR** for velocity feedback
-- **Robotic arm systems** for automated shot execution
 
 The modular design allows corrections to be translated into actuator commands for robotic hockey systems.
 
@@ -853,6 +849,7 @@ The modular design allows corrections to be translated into actuator commands fo
 ## License & Contact
 
 **Author:** [Ritabrata Chakraborty](https://ritabrata-chakraborty.github.io/Portfolio/)
+
 **Date:** October 2025
 
 For questions, issues, or contributions, please open an issue on the repository.
