@@ -7,7 +7,9 @@
 [![PyTorch](https://img.shields.io/badge/PyTorch-2.0%2B-red)]()
 
 **Author:** [Ritabrata Chakraborty](https://ritabrata-chakraborty.github.io/Portfolio/) 
+
 **Dataset:** 4000 procedurally generated shots (1000 per class)  
+
 **Best Model:** TCN with 95% test accuracy
 
 ---
