@@ -1,0 +1,29 @@
+HOCKEY SHOT STATISTICAL ANALYSIS
+==================================================
+
+Total shots: 800
+Shot types: hit, slap, push_flick, drag_flick
+
+HIT:
+  Count: 200
+  Avg Range: 127.8±46.0m
+  Avg Height: 7.5±3.2m
+  Avg Velocity: 56.9±9.9m/s
+
+SLAP:
+  Count: 200
+  Avg Range: 14.9±8.2m
+  Avg Height: 1.4±0.6m
+  Avg Velocity: 16.0±4.5m/s
+
+PUSH_FLICK:
+  Count: 200
+  Avg Range: 60.8±36.1m
+  Avg Height: 5.6±3.3m
+  Avg Velocity: 31.3±9.6m/s
+
+DRAG_FLICK:
+  Count: 200
+  Avg Range: 42.2±19.1m
+  Avg Height: 4.8±2.1m
+  Avg Velocity: 24.3±5.7m/s
