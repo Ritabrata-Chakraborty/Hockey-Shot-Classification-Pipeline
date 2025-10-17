@@ -67,15 +67,6 @@ An end-to-end system for hockey shot classification combining:
 | **Push/Flick** | Controlled (25-32 m/s), medium arc (~18°), balanced (~60m) |
 | **Drag Flick** | High arc (28-38 m/s, ~22°), maximum spin (~35 rad/s), medium range (~45m) |
 
-### Key Features
-
-- **Physics-accurate trajectory simulation** with drag, Magnus force, wind, turbulence  
-- **652 engineered features** (600 temporal + 52 auxiliary)  
-- **5 ML models** with comprehensive comparison  
-- **95% test accuracy** with TCN architecture  
-- **Real-time PID control** for shot correction  
-- **Production-ready pipeline** with shell scripts
-
 ---
 
 ## Directory Structure
@@ -345,9 +336,6 @@ For each shot (1000 per type):
   6. Resample to 200 timesteps (fixed length)
   7. Store trajectory points (time, x, y, z)
 ```
-
-**Result:** 4000 unique, physically realistic trajectories with natural variation.
-
 ---
 
 ## Trajectory Visualization
@@ -355,17 +343,6 @@ For each shot (1000 per type):
 ### Shot Types Comparison Animation
 
 ![Shot Types Comparison](analysis/animations/shot_types_comparison.gif)
-
-**Animation Details:**
-- **4 trajectories:** One representative shot per type
-- **3D visualization:** Shows full spatial trajectory
-- **Color coding:** Hit (Blue), Slap (Orange), Push/Flick (Green), Drag Flick (Red)
-- **Rotation:** 360° view over 10 seconds
-- **Key observations:**
-  - Hit shot: longest range, low arc
-  - Slap shot: shortest, nearly flat
-  - Push/Flick: balanced arc
-  - Drag Flick: highest arc, medium range
 
 ---
 
@@ -472,12 +449,6 @@ Output: [4 classes]
 | SVM | 92.81% | 87.50% | 90.00% | 0.9003 | 3.45 |
 | KNN | 100.00% | 73.75% | 76.25% | 0.7448 | 3.32 |
 
-**Key Insights:**
-- **TCN** achieves best test accuracy and F1 score with excellent generalization
-- **XGBoost** and **Random Forest** overfit (100% train accuracy)
-- **SVM** provides balanced performance
-- **KNN** suffers from curse of dimensionality with 652 features
-
 ---
 
 ### TCN Confusion Matrix (Test Set)
@@ -492,11 +463,6 @@ Drag Flick    0    0     1    19   95% accuracy
 
 Overall Test Accuracy: 95.0%
 ```
-
-**Analysis:**
-- Perfect classification for Hit and Slap shots
-- Minor confusion between Push/Flick ↔ Drag Flick (similar arc patterns)
-- Only 3 misclassifications out of 80 test samples
 
 ---
 
@@ -603,7 +569,7 @@ Update: p_new = p_old + Δp
 |-----------|----------------|------------------|-------------------|
 | Hit       | 35.0           | 12.0             | 15.0              |
 | Slap      | 45.0           | 15.0             | 25.0              |
-| Push/Flick| 28.0           | 18.0             | 10.0              |
+| Push Flick| 28.0           | 18.0             | 10.0              |
 | Drag Flick| 32.0           | 22.0             | 35.0              |
 
 ---
