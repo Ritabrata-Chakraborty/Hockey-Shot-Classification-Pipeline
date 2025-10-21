@@ -572,13 +572,6 @@ pip install -r requirements.txt
 # Activate virtual environment
 source venv/bin/activate
 ```
-
-**Key Dependencies:**
-- PyTorch 2.0+ (deep learning)
-- scikit-learn, XGBoost (ML)
-- matplotlib, seaborn (visualization)
-- pandas, numpy (data processing)
-
 ---
 
 ### Scripts Overview
@@ -674,23 +667,13 @@ All scripts are in `/scripts/` directory:
 
 ```bash
 # Clone repository
-git clone <repository_url>
+git clone https://github.com/Ritabrata-Chakraborty/Hockey-Shot-Classification-Pipeline
 cd Procedural
-
-# Virtual environment already included
-source venv/bin/activate
-
-# Verify installation
-python -c "import torch; print(f'PyTorch {torch.__version__}')"
 ```
 
 ### Option 2: Fresh Install
 
 ```bash
-# Create virtual environment
-python3 -m venv venv
-source venv/bin/activate
-
 # Install dependencies
 pip install -r requirements.txt
 ```
