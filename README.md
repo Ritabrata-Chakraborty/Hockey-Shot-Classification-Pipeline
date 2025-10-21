@@ -693,16 +693,29 @@ scipy>=1.10.0
 
 ---
 
+Here’s the revised **Future Work** section with your additions integrated smoothly and technically phrased:
+
+---
+
 ## Future Work
 
-The control system architecture supports extension to physical hardware:
+The control system architecture supports seamless extension to **physical hardware** and **real 3D trajectory training**.
+
+**Real 3D Trajectories:**
+Future work will focus on training and validation using **real-world 3D trajectories** to enhance model generalization and robustness under physical constraints.
+To extract 3D trajectories from broadcast videos, refer to the following open-source repository:
+
+```bash
+git clone https://github.com/Ritabrata-Chakraborty/3D-Localization-of-a-Sports-Ball-from-a-Single-Monocular-Camera.git
+```
 
 **Possible Hardware Integrations:**
-- **Servo motors** for launch angle adjustment
-- **High-speed cameras** for real-time trajectory tracking
-- **IMU sensors** for angle measurement
 
-The modular design allows corrections to be translated into actuator commands for robotic hockey systems.
+* **Servo motors** for launch angle adjustment
+* **High-speed cameras** for real-time trajectory tracking
+* **IMU sensors** for precise angle measurement
+
+The modular design allows corrections to be directly translated into actuator commands, enabling closed-loop control in **robotic hockey systems** and other sports automation platforms.
 
 ---
 
