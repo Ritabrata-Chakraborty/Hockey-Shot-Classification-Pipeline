@@ -466,13 +466,6 @@ Overall Test Accuracy: 95.0%
 
 **Purpose:** Real-time shot correction using PID control and classifier feedback
 
-**Capabilities:**
-- Detect actual shot type from trajectory
-- Analyze deviation from intended shot
-- Calculate corrective actions (PID-based)
-- Iteratively refine parameters until target achieved
-- Handle environmental disturbances
-
 **Compatible Classifiers:** TCN, XGBoost, Random Forest, SVM, KNN
 
 ---
@@ -568,35 +561,6 @@ Update: p_new = p_old + Δp
 
 ---
 
-### Example Correction Workflow
-
-**Scenario:** Intended = "hit", but executed with faults
-
-```
-Initial State:
-  Velocity: 30.0 m/s (error: -5.0 m/s)
-  Angle: 18.0° (error: +6.0°)
-  Spin: 10.0 rad/s (error: -5.0 rad/s)
-  Classifier predicts: "push_flick" (65% confidence)
-  Deviation: 85%
-
-Iteration 1:
-  Corrections: Δv = +4.2 m/s, Δα = -5.1°, Δω = +3.8 rad/s
-  New: v=34.2 m/s, α=12.9°, ω=13.8 rad/s
-  Classifier: "hit" (78% confidence)
-  Deviation: 22%
-
-Iteration 2:
-  Corrections: Δv = +0.6 m/s, Δα = -0.8°, Δω = +0.9 rad/s
-  New: v=34.8 m/s, α=12.1°, ω=14.7 rad/s
-  Classifier: "hit" (94% confidence)
-  Deviation: 6%
-
-SUCCESS: Target achieved in 2 iterations (94% improvement)
-```
-
----
-
 ## Usage Guide
 
 ### Prerequisites
@@ -639,12 +603,6 @@ All scripts are in `/scripts/` directory:
 
 # Arguments:
 #   num_shots: Number of shots per type (default: 1000)
-
-# Example:
-./scripts/generate.sh 1000
-
-# Output: data/hockey_shots_YYYYMMDD_HHMMSS.csv
-# Generates: 1000 shots × 4 types = 4000 trajectories
 ```
 
 ---
@@ -657,16 +615,6 @@ All scripts are in `/scripts/` directory:
 # Arguments:
 #   data_path: CSV file path (default: "data/hockey_shots*.csv")
 #   epochs: Training epochs (default: 150)
-
-# Example:
-./scripts/train.sh "data/hockey_shots_20251018.csv" 150
-
-# Outputs:
-#   - models/checkpoints/best_tcn_model.pth
-#   - models/checkpoints/{xgboost,svm,random_forest,knn}_model.pkl
-#   - models/training_results/training_curves.png
-#   - models/training_results/confusion_matrix.png
-#   - models/checkpoints/comprehensive_comparison.png
 ```
 
 ---
@@ -678,15 +626,6 @@ All scripts are in `/scripts/` directory:
 
 # Arguments:
 #   data_path: CSV file path (default: "data/hockey_shots*.csv")
-
-# Example:
-./scripts/analyze.sh
-
-# Outputs:
-#   - analysis/statistics/performance_overview.png
-#   - analysis/statistics/statistical_comparison.png
-#   - analysis/statistics/statistical_report.txt
-#   - analysis/animations/shot_types_comparison.gif (360° rotation)
 ```
 
 ---
@@ -701,15 +640,6 @@ All scripts are in `/scripts/` directory:
 #               (default: "xgboost")
 #   shot_type: hit | slap | push_flick | drag_flick
 #              (default: "drag_flick")
-
-# Examples:
-./scripts/control.sh tcn hit
-./scripts/control.sh xgboost drag_flick
-./scripts/control.sh rf push_flick
-
-# Tests PID control with specified classifier
-# Simulates fault correction with iterative refinement
-# Output: models/control_results/correction_<shot_type>.png
 ```
 
 ---
@@ -723,12 +653,6 @@ All scripts are in `/scripts/` directory:
 #   data_path: CSV path (default: "data/hockey_shots*.csv")
 #   models_dir: Models directory (default: "models/checkpoints")
 #   output_dir: Output directory (default: "models/single_test_results")
-
-# Example:
-./scripts/test_single.sh
-
-# Tests all 5 models on random trajectory
-# Output: models/single_test_results/{model}_single_test.png
 ```
 
 ---
@@ -740,13 +664,6 @@ All scripts are in `/scripts/` directory:
 
 # Arguments:
 #   data_path: CSV path (default: "data/hockey_shots*.csv")
-
-# Example:
-./scripts/test_batch.sh
-
-# Tests all models on multiple trajectories
-# Compares accuracy across classifiers
-# Output: models/batch_test_results/
 ```
 
 ---
