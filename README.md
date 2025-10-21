@@ -1,8 +1,9 @@
 # Hockey Shot Classification System
 
-**Complete Physics-Informed ML Pipeline for Hockey Shot Analysis**
+**Part 2 of Project:** *Sports Ball 3D Trajectory Reconstruction and Classification from Broadcast Video*
 
-**Author:** [Ritabrata Chakraborty](https://ritabrata-chakraborty.github.io/Portfolio/)
+👉 **Part 1 — Ball Tracking and 3D Localization:**
+🔗 [Ball Tracking and 3D Localization Pipeline](https://github.com/Ritabrata-Chakraborty/Ball-Tracking-and-3D-Localization-Pipeline)
 
 ---
 
