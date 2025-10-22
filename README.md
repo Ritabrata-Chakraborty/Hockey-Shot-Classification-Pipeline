@@ -3,7 +3,7 @@
 **Part 2 of Project:** *Sports Ball 3D Trajectory Reconstruction and Classification from Broadcast Video*
 
 👉 **Part 1 — Ball Tracking and 3D Localization:**
-[Ball Tracking and 3D Localization Pipeline](https://github.com/Ritabrata-Chakraborty/Ball-Tracking-and-3D-Localization-Pipeline)
+[Ball Tracking and 3D Localization Pipeline](https://github.com/Ritabrata-Chakraborty/3D-Localization-of-a-Sports-Ball-from-a-Single-Monocular-Camera)
 
 ---
 
